@@ -14,3 +14,17 @@ void print_char_5x7(char c)
   }
   putchar('\n');
 }
+
+void print_char_8x12(char c){
+  c -= 0x20;
+  for(int row = 0; row<12; row++){
+    unsigned char bits = font_8x12[(unsigned char)c][row];
+    for(int col = 0; col<8; col++){
+      unsigned char mask = 1 << (7-col);
+      putchar((bits & mask)? '*':' ');
+    
+  }
+    putchar('\n');
+ }
+  putchar('\n');
+}
